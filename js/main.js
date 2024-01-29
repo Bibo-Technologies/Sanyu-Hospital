@@ -119,3 +119,52 @@
     
 })(jQuery);
 
+
+const toggles = document.querySelectorAll(".faq-toggle");
+
+toggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const faqItem = toggle.parentElement;
+    faqItem.classList.toggle("active");
+  });
+});
+  // Function to open the popup with term details
+  function openPopup(termId) {
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+    const termDetails = document.getElementById('termDetails');
+    const termHead = document.getElementById('termHead');
+
+    // Get the details based on termId
+    const termElement = document.querySelector(`.term[data-term-id="${termId}"]`);
+    const termDetailsText = termElement.getAttribute('data-term-details');
+
+    // Set term details based on termDetailsText (You can replace this with actual data)
+    termDetails.textContent = termDetailsText;
+
+    // Set the term header to the text of the clicked term
+    termHead.textContent = termElement.textContent.trim();
+
+    // Show the overlay and popup
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+  }
+
+  // Function to close the popup
+  function closePopup() {
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+
+    // Hide the overlay and popup
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+  }
+
+  // Add click event listeners to each term
+  const terms = document.querySelectorAll('.term');
+  terms.forEach((term) => {
+    term.addEventListener('click', () => {
+      const termId = term.getAttribute('data-term-id');
+      openPopup(termId);
+    });
+  });
