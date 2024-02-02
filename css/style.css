@@ -457,8 +457,13 @@ font-size: small;
   
   .faq-title {
     margin: 0 35px 0 0;
-  }
   
+  }
+  @media (max-width: 768px) {
+    .faq-title {
+font-size: medium;    
+    }
+}
   .faq-text {
     display: none;
     margin: 30px 0 0;
