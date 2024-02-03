@@ -570,7 +570,7 @@ font-size: medium;
 .most-searched-terms {
     display: flex;
     gap: 5px;
-    max-width: 90%;
+    max-width: 100%;
     justify-content: center;
     margin-top: 20px;
     flex-wrap: wrap; /* Allow terms to wrap to the next line */
@@ -592,3 +592,4 @@ font-size: medium;
     background-color: #ececec;
     color: black;
   }
+  
