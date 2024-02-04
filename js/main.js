@@ -143,7 +143,7 @@ toggles.forEach((toggle) => {
     const termDetailsText = termDetailsElement ? termDetailsElement.innerHTML : '';
 
     // Set term details based on termDetailsText
-    termDetails.innerHTML = termDetailsText;
+   // termDetails.innerHTML = termDetailsText;
 
     // Set the term header to the text of the clicked term
     termHead.textContent = termElement.textContent.trim();
